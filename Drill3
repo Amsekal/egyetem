@@ -1,0 +1,35 @@
+#include <iostream>
+#include "std_lib_facilities.h"
+using namespace std;
+
+int main()
+{
+string finame,frname;char friend_sex=0;
+cout<<"Please enter the name of the person you want to write to(followed by 'enter'): ";
+cin>>finame;
+cout<<endl<<"Dear "<<finame<<", "<<endl;     //1
+cout<<"\nHow are you?\nI am fine.\nI miss you"<<endl; //2
+cout<<"Please enter the name of a friend (followed by 'enter'): ";
+cin>>frname;
+cout<<"Have you seen "<<frname<<" lately?"<<endl; //3
+cout<<"Please enter your friend's sex(Male=m Female=f): ";cin>>friend_sex;
+if(friend_sex=='m')
+cout<<"If you see "<<frname<<" please ask him to call me.\n";
+else
+cout<<"If you see "<<frname<<" please ask her to call me.\n"; //4
+ cout<<"Please enter your age:";
+    int age=0;
+    cin>>age;
+    if(age<0 || age>110)
+ simple_error("you're kidding!");
+ else{cout<<"\nI hear you just had a birthday and you are "<<age<<" years old.";} //5
+   if(age<=12)cout<<"\nNext year you will be "<<age+1;
+
+    if(age==17)cout<<"\nNext year you will be able to vote.";
+
+    if(age>=70)cout<<"\nI hope you are enjoying retirement.";//6
+    
+
+    cout<<"\nYours sincerely, "<<"\nAdam."; //7
+    return 0;
+}
