@@ -1,0 +1,32 @@
+
+#include <iostream>
+#include <string>
+#include <math.h>
+using namespace std;
+int main()
+{
+    int ok=1,nullaosztas=0;
+float elsoszam, masodikszam,vegeredmeny=0,reszeredmeny=1;
+char operandus;
+cout<<"Irja be a muveletet AxB alakban (x= +,-,*,/,^)\n";
+cin>>elsoszam>>operandus>>masodikszam;
+switch (operandus){
+case '+' :{vegeredmeny=elsoszam+masodikszam;break;}
+case '-' :{vegeredmeny=elsoszam-masodikszam;break;}
+case '*' :{vegeredmeny=elsoszam*masodikszam;break;}
+case '/' :{if(masodikszam==0) {cout<<"nem lehet osztani";nullaosztas=1,ok--;break;} else  vegeredmeny=elsoszam/masodikszam;break;}
+case '^' :{if(masodikszam==1)reszeredmeny=1; else while(masodikszam){reszeredmeny*=elsoszam;masodikszam--;} vegeredmeny=reszeredmeny;break;}
+}if(nullaosztas==0)cout<<vegeredmeny;
+if(nullaosztas==0)
+while(ok){cout<<"\nKovetkezo muvelet xB alakban, ha befejezted ird be, hogy 'K', mint kilepes ";
+cin>>operandus;reszeredmeny=1;
+switch (operandus){
+case '+' :{cin>>masodikszam;vegeredmeny+=masodikszam;break;}
+case '-' :{cin>>masodikszam;vegeredmeny-=masodikszam;break;}
+case '*' :{cin>>masodikszam;vegeredmeny*=masodikszam;break;}
+case '/' :{cin>>masodikszam;if(masodikszam==0){cout<<"nem lehet osztani/n";break;} else vegeredmeny/=masodikszam;break;}
+case '^' :{cin>>masodikszam;if(masodikszam==1)reszeredmeny=1; else while(masodikszam){reszeredmeny*=vegeredmeny;masodikszam--;} vegeredmeny=reszeredmeny;break;}
+case 'K' :{ok--;}
+}if(ok)cout<<vegeredmeny;}
+
+}
