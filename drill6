@@ -161,7 +161,7 @@ double expression()
 int main()
 try
 {
-	cout<<"Welcome to SimpleCalculator!\nPlease enter expressions using floating numbers!\nPress x to end and = for answer!\n";
+	cout<<"Welcome\nPlease enter expressions using floating numbers!\nPress x to end and = for answer!\n";
 	double val;
     while (cin) {
         Token t = ts.get();
