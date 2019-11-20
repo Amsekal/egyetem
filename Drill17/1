@@ -1,0 +1,54 @@
+#include <iostream>
+#include "std_lib_facilities.h"
+
+using namespace std;
+void print_array10(ostream& os, int* a)
+{for(int i=0;i<=9;i++)
+os<<a[i]<<" ";
+}
+void print_array(ostream& os, int* a,int n)
+{for(int i=0;i<n;i++)
+os<<a[i]<<" ";}
+void print_vector(ostream &os, vector<int> v)
+{
+	for(int i=0;i<v.size();i++)
+	os<<v[i]<<" ";
+}
+int main()
+{
+int *tizint=new int[10];
+print_array10(cout,tizint);
+cout<<endl;
+delete[] tizint;
+
+int *megtiz=new int[10];
+int a=100;
+for(int i=0;i<10;i++)
+{megtiz[i]=a;a++;}
+print_array10(cout,megtiz);
+cout<<endl;
+delete[] megtiz;
+
+a=100;
+int *tizenegy=new int[11];
+for(int i=0;i<11;i++)
+{tizenegy[i]=a;a++;}
+for(int i=0;i<=10;i++)
+cout<<tizenegy[i]<<" ";
+cout<<endl;
+delete[] tizenegy;
+
+int *husz= new int[20];
+a=100;
+for(int i=0;i<20;i++)
+{husz[i]=a;a++;}
+print_array(cout, husz,20);
+delete[] husz;
+cout<<endl;
+
+vector <int> v;
+for(int i=0;i<10;i++)v.push_back(100+i);print_vector(cout,v);
+//for(int i=0;i<11;i++)v.push_back(100+i);print_vector(cout,v);
+//for(int i=0;i<20;i++)v.push_back(100+i);print_vector(cout,v);
+//delete []v;
+}
