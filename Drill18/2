@@ -1,0 +1,30 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+vector <int> gv{1,2,4,8,16,32,64,128,256,512};
+void ln()
+{cout<<endl;}
+void f(vector <int> v)
+{
+vector <int>lv(10);
+lv=v;
+for(int i=0;i<10;i++)
+cout<<lv[i]<<" ";
+ln();
+vector <int>lv2(10);
+lv2=v;
+for(int i=0;i<10;i++)
+cout<<lv2[i]<<" ";
+ln();}
+
+int main() {
+f(gv);
+vector<int> aa(10);
+for(int i=0;i<10;i++)
+{ if(i==0)
+    aa[i]=1;
+  else
+    aa[i]=aa[i-1]*(i+1);
+ }
+ f(aa);
+return 0;}
